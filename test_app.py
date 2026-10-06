@@ -18,7 +18,7 @@ def test_divide_by_zero():
 def test_is_even():
     assert is_even(4)
     assert not is_even(7)
-"""
+
 def test_read_config(tmp_path):
     p = tmp_path / "conf.txt"
     p.write_text("hello", encoding="utf-8")
@@ -26,4 +26,3 @@ def test_read_config(tmp_path):
 def test_classify():
     assert classify(20) == "grand"
     assert classify(1) == "petit"
-"""
