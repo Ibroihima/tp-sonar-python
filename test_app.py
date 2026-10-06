@@ -1,5 +1,5 @@
 import pytest
-from app import add, divide, is_even
+from app import add, divide, is_even, read_config, classify
 
 
 def test_add():
@@ -18,3 +18,11 @@ def test_divide_by_zero():
 def test_is_even():
     assert is_even(4)
     assert not is_even(7)
+
+def test_read_config(tmp_path):
+    p = tmp_path / "conf.txt"
+    p.write_text("hello", encoding="utf-8")
+    assert read_config(str(p)) == "hello"
+def test_classify():
+    assert classify(20) == "grand"
+    assert classify(1) == "petit"
